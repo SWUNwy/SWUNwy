@@ -18,9 +18,16 @@ I write requirements. I hand them to a coding agent. The agent makes assumptions
 
 An agent doesn't ask "what about this edge case?" It just picks something and runs. Then I catch it in review, and we waste a round trip fixing what should have been right the first time.
 
-So I built a spec analyzer. It runs a product requirement through multiple expert perspectives — product strategy, architecture, user experience, risk — before any code gets written. Each lens surfaces assumptions and blind spots that a single-pass spec would miss.
+So I built a spec analyzer — [spec-analyze](https://github.com/SWUNwy/spec-analyze), now at **v3.5**. It runs a product requirement through multiple expert perspectives — product strategy, architecture, user experience, risk — before any code gets written. Each lens surfaces assumptions and blind spots that a single-pass spec would miss.
 
 The output is a spec with edge cases already annotated. The agent gets it right more often on the first try.
+
+What's in it today:
+
+- **Structured interaction annotations** — every component gets a level (L1/L2/L3) and an interaction type (T1–T11) with mandatory state coverage, so test cases can be generated directly from the states.
+- **Two annotation views** — a Chinese review view by default (role-tagged blocks plus a field summary table, made for reviewers) and an implementation view that expands state machines, API contracts, permissions, timing, and accessibility on demand.
+- **A closed-loop analysis engine** — a state machine (intake → scoped → discovering → synthesizing → verifying → repairing), gates G1–G3 plus annotation gates S1–S4, an append-only signed evidence ledger, checkpoint recovery, and versioned handoff packages for downstream Plan → Execute → Verify.
+- **Enforced output quality** — Chinese technical-writing rules with a zero-dependency linter that blocks errors before delivery, enforced in CI.
 
 ### project-knowledge — session continuity
 
