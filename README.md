@@ -12,11 +12,11 @@ Somewhere around late 2025 I started building with AI agents. Not as a side proj
 
 ## What I've built
 
-### spec-analyze — the one I reach for every day
+### pm-spark — the one I reach for every day
 
 I write requirements. I hand them to a coding agent. The agent makes assumptions I never intended.
 
-So I built [spec-analyze](https://github.com/SWUNwy/spec-analyze) — routes to what you actually need right now.
+So I built [pm-spark](https://github.com/SWUNwy/pm-spark) — routes to what you actually need right now.
 
 Five modes:
 
